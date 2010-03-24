@@ -1,6 +1,6 @@
-= opwgen =
+# opwgen
 
-== Intro ==
+## Intro
 opwgen generates passwords that are easy to remember, but still secure.
 
 It takes 128 bits of random data from /dev/urandom and shows it in the
@@ -11,10 +11,10 @@ you want to.
 I recommend 128bit (default) for crypto applications and 64bit for
 login passwords. 64bit passwords are represented by 6 words.
 
-== Installing ==
+## Installing
 make
 
-== Running ==
+## Running
 
 $ opwgen
 lock nod watt tin more pup mont clay laws coed nibs nibs
@@ -28,6 +28,6 @@ feet unit lift nave sin lint
 some wast are mull pry lime
 lear tong dub drug laud time
 
-== Other code ==
+## Other code
 The opie dir contains code from libopie and has its own license. Look in
 that directory for more information.
