@@ -20,17 +20,17 @@ make
 Running
 -------
 
-$ opwgen
-lock nod watt tin more pup mont clay laws coed nibs nibs
-$ opwgen
-chic sear rest sang pow fin otto olga rip true guy kim
-$ opwgen 2
-mice gale bane egg wet mann skew sad kate dog hays tine
-beck otis view fend meal andy fool mana bub leak writ gush
-$ opwgen -b 64 3
-feet unit lift nave sin lint
-some wast are mull pry lime
-lear tong dub drug laud time
+    $ opwgen
+    lock nod watt tin more pup mont clay laws coed nibs nibs
+    $ opwgen
+    chic sear rest sang pow fin otto olga rip true guy kim
+    $ opwgen 2
+    mice gale bane egg wet mann skew sad kate dog hays tine
+    beck otis view fend meal andy fool mana bub leak writ gush
+    $ opwgen -b 64 3
+    feet unit lift nave sin lint
+    some wast are mull pry lime
+    lear tong dub drug laud time
 
 Other code
 ----------
