@@ -39,6 +39,7 @@
 char *opiebtoe(char *engout, char *c);
 
 static const char *version = "0.2";
+static const int DEFAULT_BITS = 128;
 
 static ssize_t
 safe_read(int fd, void *buf, size_t len)
@@ -77,7 +78,7 @@ usage(const char *av0, int err)
                "Usage: %s [ -Vh ] [ -f <file> ] [ -b <bits> ]"
                " [ <passwords> ]\n"
                "\n"
-               "\t-b <bits>     Bits per password (default 64)\n"
+               "\t-b <bits>     Bits per password (default: %d)\n"
                "\t-f <file>     Random data file (default /dev/urandom)\n"
                "\t-h, --help    Show this help text\n"
                "\t-V, --version Show version\n"
@@ -85,7 +86,7 @@ usage(const char *av0, int err)
                "\n"
                "Report bugs to: thomas@habets.pp.se\n"
                "opwgen home page: <http://github.com/ThomasHabets/opwgen>\n"
-               , version, av0);
+               , version, av0, DEFAULT_BITS);
         exit(err);
 }
 
