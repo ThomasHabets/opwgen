@@ -79,7 +79,7 @@ usage(const char *av0, int err)
                " [ <passwords> ]\n"
                "\n"
                "\t-b <bits>     Bits per password (default: %d)\n"
-               "\t-f <file>     Random data file (default /dev/urandom)\n"
+               "\t-f <file>     Random data file (default /dev/random)\n"
                "\t-h, --help    Show this help text\n"
                "\t-V, --version Show version\n"
                "\t<passwords>   Generate this many passwords (default 1)\n"
@@ -112,7 +112,7 @@ main(int argc, char **argv)
         int bits = 128;
         int blocks;
         int c;
-        char *filename = "/dev/urandom";
+        char *filename = "/dev/random";
         int lower = 1;
 
         { /* handle GNU options */
