@@ -2,7 +2,7 @@
 /*
  * (BSD license without advertising clause below)
  *
- * Copyright (c) 2006 Thomas Habets. All rights reserved.
+ * Copyright (c) 2006 Thomas Habets <thomas@habets.se>. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -84,7 +84,7 @@ usage(const char *av0, int err)
                "\t-V, --version Show version\n"
                "\t<passwords>   Generate this many passwords (default 1)\n"
                "\n"
-               "Report bugs to: thomas@habets.pp.se\n"
+               "Report bugs to: thomas@habets.se\n"
                "opwgen home page: <http://github.com/ThomasHabets/opwgen>\n"
                , version, av0, DEFAULT_BITS);
         exit(err);
@@ -94,7 +94,7 @@ static void
 printVersion()
 {
         printf("opwgen %s\n"
-               "Copyright (C) 2006-2010 Thomas Habets\n"
+               "Copyright (C) 2006-2010 Thomas Habets <thomas@habets.se>\n"
                "License: 3-clause BSD\n"
                "This is free software: you are free to change and "
                "redistribute it.\n"

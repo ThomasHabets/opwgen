@@ -1,0 +1,29 @@
+#!/bin/sh
+
+set -e
+
+BIN="./opwgen"
+
+OUT="$("$BIN" -f /dev/zero)"
+if [ ! "x$OUT" = x"a a a a a a a a a a a a" ]; then
+    echo "FAIL: 128bit /dev/zero: $OUT"
+    exit 1
+fi
+
+OUT="$("$BIN" -b 64 -f /dev/zero)"
+if [ ! "x$OUT" = x"a a a a a a" ]; then
+    echo "FAIL: 64bit /dev/zero: $OUT"
+    exit 1
+fi
+
+OUT="$("$BIN" -f testdata/random1.bin)"
+if [ ! "x$OUT" = x"gas cub dub nib same orgy dade curb iq grad van join" ]; then
+    echo "FAIL: 128bit random1: $OUT"
+    exit 1
+fi
+OUT="$("$BIN" -b 64 -f testdata/random1.bin)"
+if [ ! "x$OUT" = x"gas cub dub nib same orgy" ]; then
+    echo "FAIL: 64bit random1: $OUT"
+    exit 1
+fi
+echo "SUCCESS"
