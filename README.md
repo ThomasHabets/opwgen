@@ -1,6 +1,9 @@
 opwgen
 ======
 
+By Thomas Habets <thomas@habets.se>  
+https://github.com/ThomasHabets/opwgen
+
 Intro
 -----
 opwgen generates passwords that are easy to remember, but still secure.
