@@ -71,15 +71,34 @@ strlower(char *buf)
         }
 }
 
+int
+todash(int c)
+{
+        if (' ' == c)
+                return('-');
+        else
+                return(c);
+}
+
+static void
+spacetodash(char *buf)
+{
+        while ((*buf = todash(*buf))) {
+                buf++;
+        }
+}
+
 static void
 usage(const char *av0, int err)
 {
         printf("opwgen %s\n"
-               "Usage: %s [ -Vh ] [ -f <file> ] [ -b <bits> ]"
+               "Usage: %s [ -VhdU ] [ -f <file> ] [ -b <bits> ]"
                " [ <passwords> ]\n"
                "\n"
                "\t-b <bits>     Bits per password (default: %d)\n"
                "\t-f <file>     Random data file (default /dev/random)\n"
+               "\t-d            Use dash as separator, default is space\n"
+               "\t-U            Output in uppercase, default is lowercase\n"
                "\t-h, --help    Show this help text\n"
                "\t-V, --version Show version\n"
                "\t<passwords>   Generate this many passwords (default 1)\n"
@@ -114,6 +133,7 @@ main(int argc, char **argv)
         int c;
         char *filename = "/dev/random";
         int lower = 1;
+        int dash = 0;
 
         { /* handle GNU options */
                 int c;
@@ -128,12 +148,18 @@ main(int argc, char **argv)
                 }
         }
 
-        while ((opt = getopt(argc, argv, "hf:b:V")) != -1) {
+        while ((opt = getopt(argc, argv, "dhf:b:UV")) != -1) {
                 switch(opt) {
                 case 'h':
                         usage(argv[0], 0);
                 case 'V':
-                        printVersion(argv[0]);
+                        printVersion();
+                case 'd':
+                        dash = 1;
+                        break;
+                case 'U':
+                        lower = 0;
+                        break;
                 case 'f':
                         filename = optarg;
                         break;
@@ -187,11 +213,18 @@ main(int argc, char **argv)
                 if (lower) {
                         strlower(eng);
                 }
+                if (dash) {
+                        spacetodash(eng);
+                }
                 printf("%s", eng);
                 if (!((c+1) % blocks)) {
                         printf("\n");
                 } else {
-                        printf(" ");
+                        if (dash) {
+                                 printf("-");
+                        } else {
+                                 printf(" ");
+                        }
                 }
 	}
 	return 0;
