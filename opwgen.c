@@ -74,10 +74,11 @@ strlower(char *buf)
 int
 todash(int c)
 {
-        if (' ' == c)
-                return('-');
-        else
-                return(c);
+        if (' ' == c) {
+                return '-';
+        } else {
+                return c;
+        }
 }
 
 static void
