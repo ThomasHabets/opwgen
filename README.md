@@ -10,7 +10,7 @@ opwgen generates passwords that are easy to remember, but still secure.
 
 It takes 128 bits of random data from /dev/urandom and shows it in the
 form of 12 words. There is no loss of information in converting from
-128bit the input data and the words. You can convert it back again if
+the 128bit input data and the words. You can convert it back again if
 you want to.
 
 I recommend 128bit (default) for crypto applications and 64bit for
